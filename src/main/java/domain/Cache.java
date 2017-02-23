@@ -1,12 +1,16 @@
 package domain;
 
+import java.util.List;
+
 public class Cache {
     private int id;
-    private int size;
+    private int capacity;
+    private int remainCapacity;
+    private List<Video> videoInCache;
 
-    public Cache(int id, int size) {
+    public Cache(int id, int capacity) {
         this.id = id;
-        this.size = size;
+        this.capacity = capacity;
     }
 
     public int getId() {
@@ -17,11 +21,27 @@ public class Cache {
         this.id = id;
     }
 
-    public int getSize() {
-        return size;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getRemainCapacity() {
+        return remainCapacity;
+    }
+
+    public void setRemainCapacity(int remainCapacity) {
+        this.remainCapacity = remainCapacity;
+    }
+
+    public List<Video> getVideoInCache() {
+        return videoInCache;
+    }
+
+    public void setVideoInCache(List<Video> videoInCache) {
+        this.videoInCache = videoInCache;
     }
 }

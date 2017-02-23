@@ -19,6 +19,10 @@ public class Main {
     public static List<Cache> cacheList = new ArrayList();
 
     public static void main(String[] args) throws IOException {
+       parseFile();
+    }
+
+    public static void parseFile() throws IOException {
         File inputFile = new File("test.in");
         BufferedReader br = new BufferedReader(new FileReader(inputFile));
         String totalInfoString = br.readLine();
@@ -62,12 +66,9 @@ public class Main {
             String[] requestInfoArray = requestInfoString.split(" ");
             int video = parseInt(requestInfoArray[0]);
             int endpoint = parseInt(requestInfoArray[1]);
-            int noOfRequst = parseInt(requestInfoArray[0]);
+            int noOfRequst = parseInt(requestInfoArray[2]);
             endpointList.get(endpoint).getRequestList().add(new Request(video, noOfRequst));
         }
-
-        System.out.println("test");
-
-
     }
+
 }

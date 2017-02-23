@@ -1,13 +1,20 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Endpoint {
     private int id;
-    private Map<Cache, Integer> cacheLatencyMap;
+    private Map<Integer, Integer> cacheToLatencyMap;
     private int latencyToDataCenter;
     private List<Request> requestList;
+
+    public Endpoint() {
+        cacheToLatencyMap = new TreeMap();
+        requestList = new ArrayList();
+    }
 
     public int getId() {
         return id;
@@ -17,12 +24,12 @@ public class Endpoint {
         this.id = id;
     }
 
-    public Map<Cache, Integer> getCacheLatencyMap() {
-        return cacheLatencyMap;
+    public Map<Integer, Integer> getCacheToLatencyMap() {
+        return cacheToLatencyMap;
     }
 
-    public void setCacheLatencyMap(Map<Cache, Integer> cacheLatencyMap) {
-        this.cacheLatencyMap = cacheLatencyMap;
+    public void setCacheToLatencyMap(Map<Integer, Integer> cacheToLatencyMap) {
+        this.cacheToLatencyMap = cacheToLatencyMap;
     }
 
     public int getLatencyToDataCenter() {
